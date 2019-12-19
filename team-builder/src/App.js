@@ -5,8 +5,9 @@ import Teams from "./Teams"
 import './App.css';
 
 function App() {
-  const [teamMembers, setTeamMemebers] = useState([
+  const [teamMember, setTeamMemebers] = useState([
     {
+      id: 1,
       name: "Sierra Curtis",
       email: "sierracurtis91@gmail.com",
       role: "Web Developer"
@@ -14,18 +15,18 @@ function App() {
   ]);
   const addNewTeamMember = member => {
     const NewTeamMember = {
-      // id: Date.now(),
+      id: Date.now(),
       name: member.name,
       email: member.email,
       role: member.role
     };
-    setTeamMemebers([...teamMembers, NewTeamMember]);
+    setTeamMemebers([...teamMember, NewTeamMember]);
   };
   return (
     <div className="App">
       <h1>My Team</h1>
       <Forms addNewTeamMember={addNewTeamMember}/>
-      <Teams teamMembers={teamMembers} />
+      <Teams teamMember={teamMember} />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

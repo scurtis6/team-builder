@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+.App h1 {
+  background-color: lightgrey;
+  color: rgb(12, 158, 226);
+  padding: 2rem 0;
+}
+.App div form{
+  border: 1px solid grey;
+}
+.App div form label {
+  font-size: 1.4rem;
+}
+.App div form input {
+  font-size: 1.1rem;
+  color: rgb(29, 81, 105);
+}
+.App div form button {
+  font-size: 1.1rem;
+  color: rgb(12, 158, 226);
+  margin: 2rem 0;
+  padding: 1rem;
+}
+.team-list .team h2{
+  color: rgb(20, 110, 83)
+}
+.team-list .team p{
+  background-color: rgb(20, 110, 83);
+  color: white;
+  margin: 2rem 100px;
+  padding: 1rem 0;
+}

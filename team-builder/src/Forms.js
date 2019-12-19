@@ -12,28 +12,46 @@ const Forms = props => {
         setMember({...member, [e.target.name]: e.target.value});
         console.log(e.target)
     }
+
+    const submitHandler = e => {
+        e.preventDefault()
+        const newMember = {
+            ...member, id: Date.now(),
+        }
+        props.addNewTeamMember(newMember);
+        setMember({name: "", email: "", role: ""})
+    }
     return (
-        <form>
+        <div>
+        <form onSubmit={submitHandler}>
             <label htmlFor="name">Name: </label>
             <input 
             id="name"
             type='text'
+            name="name"
             placeholder='Enter name'
             onChange={handleChanges}
+            value={member.name}
              />
              <label htmlFor="email">Email: </label>
              <input
              id="email"
              type="text"
+             name="email"
              placeholder="Enter email"
-             onChange={handleChanges} />
-             <label>Role: 
+             onChange={handleChanges}
+             value={member.email} />
+             <label>Role: </label>
                  <input
+                 id="rolw"
                  type="text"
+                 name="role"
                  placeholder="Enter role"
-                 onChange={handleChanges} />
-             </label>
+                 onChange={handleChanges}
+                 value={member.role} />
+             <button type="submit">Add New Member</button>
         </form>
+        </div>
     )
 }
 
